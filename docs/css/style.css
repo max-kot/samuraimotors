@@ -4571,6 +4571,100 @@ body * {
 	color: var(--color-gray);
 }
 
+.partners {
+	background-image: url("../images/partners/bg-1.jpg");
+	background-position: center center;
+	/* x y */
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: var(--section-padding) 0;
+	position: relative;
+}
+.webp .partners {
+	background-image: url("../images/partners/bg-1.webp");
+}
+.avif .partners {
+	background-image: url("../images/partners/bg-1.avif");
+}
+
+.partners::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-dark-opacity);
+}
+
+.partners__container {
+	position: relative;
+	z-index: 2;
+}
+
+.partners__title {
+	text-align: center;
+}
+
+.partners__title:not(:last-child) {
+	margin-bottom: clamp(2.5rem, 1.7857142857rem + 3.5714285714vw, 5rem);
+}
+
+.partners__running-line {
+	--slider-gap: 3.75rem;
+	--slider-duration: 15s;
+}
+
+.partners__running-line:not(:last-child) {
+	margin-bottom: 3.75rem;
+}
+
+.partners__running-line[data-running-line="right"] {
+	--slider-direction: reverse;
+}
+
+.partners__running-line[data-running-line="left"] {
+	--slider-direction: forwards;
+}
+
+.partners__running-line:hover > .partners__list {
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+.partners__list {
+	list-style-type: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: var(--slider-gap);
+	-webkit-animation: slide var(--slider-duration, 15s) var(--slider-direction, forwards) infinite linear;
+	animation: slide var(--slider-duration, 15s) var(--slider-direction, forwards) infinite linear;
+}
+
+.partners__item {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	height: 5.75rem;
+}
+
+@-webkit-keyframes slide {
+	to {
+		-webkit-transform: translateX(-162%);
+		transform: translateX(-162%);
+	}
+}
+
+@keyframes slide {
+	to {
+		-webkit-transform: translateX(-162%);
+		transform: translateX(-162%);
+	}
+}
+
 @media (max-width: 64em) {
 	.menu__btn {
 		display: -webkit-box;
