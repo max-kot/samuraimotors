@@ -1,0 +1,7 @@
+User-Agent: *
+
+Disallow: /404.html
+Disallow: /success.html
+
+Sitemap: https://max-kot.github.io/samuraimotors/sitemap.xml
+Host: https://max-kot.github.io/samuraimotors
